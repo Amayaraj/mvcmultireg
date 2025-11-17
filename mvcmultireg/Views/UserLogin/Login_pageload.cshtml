@@ -1,0 +1,31 @@
+﻿@model mvcmultireg.Models.Logincls
+@{
+    ViewBag.Title = "LOgin_pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+<div>
+    @using (Html.BeginForm("Login_click", "UserLogin", FormMethod.Get))
+    {
+        <div>
+            <label>UserName:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.username)
+            @Html.ValidationMessageFor(m => m.username)
+        </div>
+        <div>
+            <label>Password:</label>
+        </div>
+        <div>
+            @Html.PasswordFor(m => m.password)
+            @Html.ValidationMessageFor(m => m.password)
+        </div>
+        <div>
+            <input type="submit" value="insert" />
+            @Html.DisplayFor(m => m.msg)
+        </div>
+    }
+</div>
+
